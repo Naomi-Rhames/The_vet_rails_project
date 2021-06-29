@@ -3,8 +3,8 @@ class CreatePatients < ActiveRecord::Migration[6.1]
     create_table :patients do |t|
       t.string :name
       t.string :symptoms
+      t.string :dog_breed
       t.integer :phone_number
-      
     end
   end
 end

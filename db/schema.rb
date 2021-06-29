@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_06_29_182926) do
 
   create_table "appointments", force: :cascade do |t|
+    t.string "date"
     t.integer "doctors_id"
     t.integer "patients_id"
     t.datetime "created_at", precision: 6, null: false
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_182926) do
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "symptoms"
+    t.string "dog_breed"
     t.integer "phone_number"
   end
 
