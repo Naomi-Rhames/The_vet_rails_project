@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_053833) do
     t.string "name"
     t.string "symptoms"
     t.string "dog_breed"
+    t.string "image_url"
     t.integer "phone_number"
   end
 
