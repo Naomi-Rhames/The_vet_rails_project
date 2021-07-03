@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :dogs, only: [:index]
   resources :doctors
   get "/signup", to: "users#new", as: "signup"
-  # get "/signup" to: "users#create", as: "signup"
+ 
   resources :users, only: [:new, :create]
 
   get "/login", to: "sessions#new", as: "login"

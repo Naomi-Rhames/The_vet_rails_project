@@ -8,6 +8,10 @@ class CreateDogs < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :origin
       t.string :image
+      t.integer :phone_number
+      t.string :owners_name
+      t.string :symptoms
+      t.string :dog_breed
       t.timestamps
     end
   end
