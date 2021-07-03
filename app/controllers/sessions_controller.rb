@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    skip_before_action :authorized, only: [:new, :create]
+
  def new
  end
 
@@ -6,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to patients_path
+        redirect_to dogs_path
     else
         flash[:error] = ["Invaild Email or Password!"]
         redirect_to login_path

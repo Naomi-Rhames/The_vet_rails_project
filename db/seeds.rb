@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+response = RestClient.get("https://api.thedogapi.com/v1/breeds")
+breeds_array = JSON.parse(response)
+
+breeds_array.each do |array|
+binding.pry
+end

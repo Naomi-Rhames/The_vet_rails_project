@@ -1,4 +1,4 @@
-class Patient < ActiveRecord::Base
+class Dog < ActiveRecord::Base
     belongs_to :doctor
 
     # def fetch_pets
