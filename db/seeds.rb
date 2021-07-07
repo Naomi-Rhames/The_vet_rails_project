@@ -12,5 +12,6 @@ breeds_array = JSON.parse(response)
 breeds_array.each do |dog|
     @dog = Dog.new(name: dog["name"], life_span: dog["life_span"], origin: dog["origin"], temperament: dog["temperament"], description: dog["description"], image: dog["image"]["url"])
     @dog.save
+     binding.pry
     end
 
