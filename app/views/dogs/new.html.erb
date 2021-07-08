@@ -1,4 +1,38 @@
-<%= form_for @dogs do |f| %>
-<%= f.label :name %>
-  <%= f.text_field :life_span %>
-  <%= f.label : %>
+<i><h2>Put your Dog's Information in!</h2></i>
+<hr>
+<i><p>Feel free to fill out the information about your dog, we would to learn more about your fun and adorable little friend or your BIG pal!</p>
+<%= form_for @dog do |f| %>
+<br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <br>
+  <%= f.label :dog_breed %><br>
+  <%= f.text_field :dog_breed %><br>
+  <br>
+  <%= f.label :life_span %><br>
+  <%= f.text_field :life_span %><br>
+  <br>
+  <%= f.label :symptoms%><br>
+  <%= f.text_field :symptoms %><br>
+  <br>
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br>
+  <br>
+  <%= f.label :temperament %><br>
+  <%= f.text_field :temperament%><br>
+  <br>
+  <%= f.label :origin %><br>
+  <%= f.text_field :origin %><br>
+  <br>
+ Now fill out your information as the owner!
+<br>
+<br>
+<%= f.label :owners_name %><br>
+<%= f.text_field :owners_name%><br>
+<br>
+<%= f.label :phone_number %><br>
+<%= f.text_field :phone_number %><br>
+<br>
+<%= f.submit "Submit!"%>
+</i>
+  <%end%>

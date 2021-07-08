@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.errors {
+    color: #A9D5F1
+}

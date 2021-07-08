@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to dogs_path
     else
-        flash[:error] = ["Invaild Email or Password!"]
+        flash[:errors] = ["Invaild Email or Password!"]
         redirect_to login_path
      end
  end

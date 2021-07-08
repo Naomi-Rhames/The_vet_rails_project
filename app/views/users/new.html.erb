@@ -1,7 +1,8 @@
 <i><h2>Signup Page</h2><i>
-
+<hr>
 <br><%= form_for @user do |f| %>
-<i><%= f.label :email %><br></i>
+  <%= render partial: "layouts/doggy_errors", locals: {dog: @user} %>
+<i><%= f.label :email %></i>
 <%= f.text_field :email %>
 <%= f.label :password %>
 <%= f.text_field :password %>
