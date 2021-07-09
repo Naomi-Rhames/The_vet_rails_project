@@ -13,6 +13,17 @@
  *= require_tree .
  *= require_self
  */
+.dog {
+    flex-direction: row;
+    background-color: whitesmoke;
+    word-spacing: 5px;
+    margin: 10px;
+    float: right;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #51A0D5
+
+}
+
 .errors {
-    color: #A9D5F1
+    color: #51A0D5
 }

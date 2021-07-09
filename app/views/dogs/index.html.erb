@@ -1,4 +1,12 @@
 <i><h1>Welcome to the vet!</h1></i>
 <hr>
-<i><p> If you are thinking about looking into diffrent breeds of dogs, here is a list of dogs you can check out. Enjoy!</p></i>
+<i><p>We are so happy that you are here and our app is to help you keep your dog healthy and in great shape! </p></i>
+<br>
+<i><p>Your Pets Here! </p></i>
 
+<br>
+<ul>
+<% @dogs.each do |dog| %>
+<li><h3><%= link_to dog.name, dog_path(dog) %></h3></li><br>
+<% end%>
+</ul>
