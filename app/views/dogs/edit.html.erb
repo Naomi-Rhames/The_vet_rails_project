@@ -2,41 +2,4 @@
 <hr>
 <i><p> It's important to update your dog's info and your Contact information so everything can run smoothly!</p></i>
 
-<%= form_for @dog do |f| %>
- <%= render partial: "layouts/doggy_errors", locals: {dog: @dog} %>
-<br>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <br>
-  <%= f.label :dog_breed %><br>
-  <%= f.text_field :dog_breed %><br>
-  <br>
-  <%= f.label :life_span %><br>
-  <%= f.text_field :life_span %><br>
-  <br>
-  <%= f.label :symptoms%><br>
-  <%= f.text_field :symptoms %><br>
-  <br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
-  <br>
-  <%= f.label :temperament %><br>
-  <%= f.text_field :temperament%><br>
-  <br>
-  <%= f.label :origin %><br>
-  <%= f.text_field :origin %><br>
-  <br>
-  <%= f.label :image %><br>
-  <%= f.text_field :image %><br>
-  <br>
- Now fill out your information as the owner!
-<br>
-<br>
-<%= f.label :owners_name %><br>
-<%= f.text_field :owners_name%><br>
-<br>
-<%= f.label :phone_number %><br>
-<%= f.text_field :phone_number %><br>
-<br>
-<%= f.submit "Finished Edit!" %>
-<% end %>
+<%= render 'form', dog: @dog %>
