@@ -1,7 +1,7 @@
-<i><h2>You are viewing the dog <%= @dog.name %>!!!</h2></i>
+<i><h2>You are viewing the dog <%= @dog.name %>!!! 🐾</h2></i>
 <hr>
-<i><p>Make sure your dogs information is correct! We want accorate information for your dog so that your dog feels welcomed! </p>
-
+<i><p> Here is where you can get in touch with other dog owners and know who's in the vet community 🐾 </i></p>
+ 
 <i><h4> Name: <%= @dog.name %></h4></i>
 <i><h4> From: <%= @dog.origin %></h4><i>
 <i><h4> Dog Breed: <%= @dog.dog_breed %> </h4></i>
@@ -12,3 +12,9 @@
 <hr>
 <i><h4>Owners Name: <%= @dog.owners_name%></h4></i>
 <i><h4>Contact Information: <%= @dog.phone_number%>
+<br>
+<br>
+<%= link_to "Edit Dog's Information", edit_dog_path(@dog)%>
+<br>
+<br>
+<%= link_to "Delete Dog's Information", dog_path(@dog), method: "delete"%>
