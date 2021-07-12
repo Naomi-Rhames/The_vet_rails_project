@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
  gem 'rest-client'
  gem 'json'
+ gem 'faker'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

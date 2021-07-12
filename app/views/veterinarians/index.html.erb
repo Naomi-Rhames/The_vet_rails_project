@@ -1,0 +1,11 @@
+<h2><i>Here is our caring Veterinarians!</i></h2>
+<hr>
+<i><p>We are so pround of our care takers, they love to keep your pet healthy and safe! Here is a list of veterinarians that's in the family!</p></i>
+
+<ul>
+<% @veterinarians.each do |veterinarian| %>
+  <li>
+    <%= link_to " Dr. #{veterinarian.full_name}", veterinarian_path(@veterinarians) %>
+  </li> 
+<% end %>
+<ul>

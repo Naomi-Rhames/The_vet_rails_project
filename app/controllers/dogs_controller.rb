@@ -7,6 +7,7 @@ class DogsController < ApplicationController
 
     def create
         @dog = Dog.create(dog_params)
+        @dog.user_id = current_user.id
         if @dog.save
             redirect_to dogs_path
            
@@ -24,6 +25,7 @@ class DogsController < ApplicationController
     end
 
     def edit
+        #  binding.pry
     end
 
     def update
@@ -39,13 +41,17 @@ class DogsController < ApplicationController
         flash[:notice] = "#{@dog.name} was sadly deleted 😢"
         redirect_to dogs_path(@dog)
     end
+   
+     
     private
 
     def find_dog
-        @dog = Dog.find_by_id(params[:id]) 
+        @dog = Dog.find_by_id(params[:id])
+    
     end 
 
     def dog_params
-       params.require(:dog).permit(:name, :life_span, :temperament, :description, :symptoms ,:origin, :phone_number, :owners_name, :dog_breed, :image) 
+       params.require(:dog).permit(:name, :life_span, :temperament, :description, :symptoms ,:origin, :phone_number, :owners_name, :dog_breed, :image, :user_id) 
     end
+
 end
