@@ -1,0 +1,25 @@
+<i><h2>Create a Appointment</h2></i>
+<hr>
+<i><p>Please set an appointment for your dog when it's needed, we want to make sure your Pet is healthy and also happy but most of all in good shape!</p></i>
+<i><p>Set up an appointment with a Veterinarian today!</p></i>
+
+<% form_for @appointment do |f|%>
+  <%= f.label :dogs_name %><br>
+  <%= f.text_field :dogs_name %><br>
+  <br>
+  <%= f.label :dog_breed%><br>
+  <%= f.text_field :dog_breed%><br>
+  <br>
+  <%= f.label :symptoms %><br>
+  <%= f.text_field :symptoms %><br>
+  <br>
+  <%= f.label :agenda %><br>
+  <%= f.text_field :agenda %><br>
+  <br>
+  <%= f.label :date %><br>
+  <%= f.datetime_field :date %><br>
+  <br>
+  <%= f.submit "Create Appointment!"%>
+
+  <%end%>
+  

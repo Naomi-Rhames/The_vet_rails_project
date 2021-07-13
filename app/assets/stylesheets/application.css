@@ -16,7 +16,7 @@
 .dog {
     flex-direction: row;
     background-color: whitesmoke;
-    word-spacing: 5px;
+    word-spacing: 15px;
     margin: 10px;
     float: right;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

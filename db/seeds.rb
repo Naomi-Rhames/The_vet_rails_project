@@ -8,8 +8,8 @@
 
 25.times do
     name = Faker::Name.unique.name
-    specialty = Faker::Games::Heroes.specialty
-    Veterinarian.create(name: name, specialty: specialty)
-    puts "Created #{name} who deals with #{specialty}"
-end
-
+    phone_number = Faker::PhoneNumber.cell_phone 
+    email =  Faker::Internet.free_email
+    Veterinarian.create(name: name, phone_number: phone_number, email: email)
+    puts "Created #{name} and here is there phone number:  #{phone_number} and email #{email}"
+end 

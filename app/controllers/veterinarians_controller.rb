@@ -5,11 +5,12 @@ class VeterinariansController < ApplicationController
     end
 
     def show
-        find_veterinarian
+        #    binding.pry
     end
 
     private
     def find_veterinarian
+     
         @veterinarian = Veterinarian.find_by_id(params[:id])
     end
 end

@@ -29,7 +29,7 @@ class DogsController < ApplicationController
     end
 
     def update
-        if @dog.update(dog_params)
+        if  @dog.user == current_user && @dog.update(dog_params)
             redirect_to dog_path
         else
             render :edit
@@ -37,9 +37,11 @@ class DogsController < ApplicationController
     end
     
     def destroy
-        @dog.destroy
-        flash[:notice] = "#{@dog.name} was sadly deleted 😢"
-        redirect_to dogs_path(@dog)
+        if @dog.user == current_user 
+            @dog.destroy
+            flash[:notice] = "#{@dog.name} was sadly deleted 😢"
+            redirect_to dogs_path(@dog)
+       end
     end
    
      
@@ -47,11 +49,10 @@ class DogsController < ApplicationController
 
     def find_dog
         @dog = Dog.find_by_id(params[:id])
-    
     end 
 
     def dog_params
-       params.require(:dog).permit(:name, :life_span, :temperament, :description, :symptoms ,:origin, :phone_number, :owners_name, :dog_breed, :image, :user_id) 
+       params.require(:dog).permit(:name, :user_id, :life_span, :temperament, :description, :symptoms ,:origin, :phone_number, :owners_name, :dog_breed, :imageq) 
     end
 
 end

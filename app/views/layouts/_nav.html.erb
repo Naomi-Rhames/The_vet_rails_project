@@ -1,9 +1,11 @@
 <nav>
 <% if logged_in? %>
 <ul class="dog">
-    <%= link_to "Logout", logout_path, method: "delete" %>
-    <%= link_to "Create Dog", new_dog_path%>
     <%= link_to "Home", dogs_path%>
+    <%= link_to "Create Dog", new_dog_path%>
+    <%= link_to "Our Team!", veterinarians_path%>
+    <%= link_to "Logout", logout_path, method: "delete" %>
+
 <% else %>
     <ul class="dog">
     <%= link_to "Login", login_path %>

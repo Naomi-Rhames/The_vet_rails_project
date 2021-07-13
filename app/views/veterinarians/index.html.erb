@@ -5,7 +5,7 @@
 <ul>
 <% @veterinarians.each do |veterinarian| %>
   <li>
-    <%= link_to " Dr. #{veterinarian.full_name}", veterinarian_path(@veterinarians) %>
+    <%= link_to " Dr. #{veterinarian.full_name}", veterinarian_path(veterinarian) %>
   </li> 
 <% end %>
 <ul>
