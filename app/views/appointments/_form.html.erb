@@ -1,0 +1,24 @@
+<%= form_for @appointment do |f|%>
+
+  <%= render partial: "layouts/appointment_errors", locals: {appointment: @appointment} %>
+  <%= f.label :dog_id, "Dog Name" %><br>
+  <br>
+  <%= f.collection_select(:dog_id, Dog.all, :id, :name) %><br>
+  <br>
+  <%= f.label :symptoms %><br>
+  <%= f.text_field :symptoms %><br>
+  <br>
+  <%= f.label :agenda %><br>
+  <%= f.text_field :agenda %><br>
+  <br>
+  <%= f.label :date %><br>
+  <%= f.datetime_field :date %><br>
+  <br>
+  <%= f.label :veterinarian_id, "Choose Your Veterinarian"%><br>
+  <br> 
+
+  <%= f.collection_select(:veterinarian_id, Veterinarian.all, :id, :name)%><br>
+  <br>
+  <%= f.submit "Submit Appointment!"%>
+
+<%end%>

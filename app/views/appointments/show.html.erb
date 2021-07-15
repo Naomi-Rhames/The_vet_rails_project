@@ -1,0 +1,17 @@
+<i><h2>You are viewing the dog <%= @appointment.dog.name %>'s Appointment !!! 🐾</h2></i>
+<hr>
+<i><p> Here is where you can see other dogs Appointments 🐾 </i></p>
+ 
+<i><h4> Name: <%= @appointment.dog.name %></h4></i>
+<i><h4> Agenda: <%= @appointment.agenda%></h4></i>
+<i><h4> Date: <%= @appointment.date %></h4><i>
+
+<br>
+<br>
+  <% if @appointment.dog.user_id == current_user.id%>  
+<%= link_to "Edit Appointment", edit_appointment_path(@appointment)%>
+<br>
+<br>
+<%= link_to "Delete Appointment", appointment_path(@appointment), method: "delete"%>
+<hr>
+<% end %>

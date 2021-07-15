@@ -1,0 +1,8 @@
+<i><h2>Booked Appointments Here🐾</h2></i>
+<hr>
+<i><p>Here you can see your and other booked appointments!</i></p>
+<ul>
+ <% @appointments.each do |appointment|%>
+ <li><h3><%= link_to appointment.dog.name, appointment_path(appointment) %>
+ <% end %>
+ </ul>

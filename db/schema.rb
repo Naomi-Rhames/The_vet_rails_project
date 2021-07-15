@@ -13,11 +13,9 @@
 ActiveRecord::Schema.define(version: 2021_07_03_055459) do
 
   create_table "appointments", force: :cascade do |t|
-    t.string "dogs_name"
-    t.string "dog_breed"
-    t.string "agenda"
     t.string "symptoms"
-    t.string "date"
+    t.string "agenda"
+    t.datetime "date"
     t.integer "veterinarian_id"
     t.integer "dog_id"
     t.datetime "created_at", precision: 6, null: false
