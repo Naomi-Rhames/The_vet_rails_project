@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create]
   delete "/logout", to: "sessions#destroy"
 
+  get "/auth/google_oauth2/callback", to: "sessions#google_omniauth"
+
 end
