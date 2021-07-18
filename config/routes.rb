@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :appointments do
     resources :veterinarians, only: [:index, :show]
   end
+  resources :breeds, only: [:index, :show]
   resources :dogs
   resources :veterinarians, only: [:index, :show]
   get "/signup", to: "users#new", as: "signup"
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: "login"
     resources :sessions, only: [:create]
   delete "/logout", to: "sessions#destroy"
+
+  get '/search' => "breeds#search", :as => 'search_breed'
 
   get "/auth/google_oauth2/callback", to: "sessions#google_omniauth"
 

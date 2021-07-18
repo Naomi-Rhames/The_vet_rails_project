@@ -47,6 +47,6 @@ private
    end
 
    def find_appointment
-    @appointment = Appointment.find(params[:id])
+    @appointment = Appointment.find_by_id(params[:id])
    end
 end

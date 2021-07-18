@@ -1,5 +1,6 @@
 class Dog < ApplicationRecord
     belongs_to :user
+    belongs_to :breed
     belongs_to :veterinarian, optional: true
     validates :name, presence: true
     validates :dog_breed, presence: true
@@ -10,5 +11,6 @@ class Dog < ApplicationRecord
     validates :origin, presence: true
     validates :owners_name, presence: true
     validates :phone_number, presence: true
-   
+    
+    
 end   

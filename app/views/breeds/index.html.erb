@@ -1,0 +1,6 @@
+<i><h2> Fun Breeds Of Dogs 🐶🐾</h2></i>
+<hr>
+<i><p>We are a family of dog lovers and we would love for you to explore and learn about other breeds dogs! Have fun exploring!</p></i>
+    <% @breeds.each do |breed| %>
+        <%= link_to breed.name, breed_path(breed) %><br>
+    <% end %>

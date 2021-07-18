@@ -2,7 +2,9 @@
 <% if logged_in? %>
 <ul class="dog">
     <%= link_to "Home", dogs_path%>
+    <%= link_to "Appointments", appointments_path%>
     <%= link_to "Create Dog", new_dog_path%>
+    <%= link_to "Breeds!", breeds_path%>
     <%= link_to "Our Team!", veterinarians_path%>
     <%= link_to "Logout", logout_path, method: "delete" %>
 

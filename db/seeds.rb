@@ -13,3 +13,12 @@
     Veterinarian.create(name: name, phone_number: phone_number, email: email)
     puts "Created #{name} and here is there phone number:  #{phone_number} and email #{email}"
 end 
+
+
+response = RestClient.get("https://api.thedogapi.com/v1/breeds")
+breeds_array = JSON.parse(response)
+breeds_array.each do |breed|
+    @breeds = Breed.create(name: breed["name"], life_span: breed["life_span"], origin: breed["origin"], temperament: breed["temperament"], description: breed["description"], image: breed["image"]["url"], bred_for: breed["bred_for"], breed_group: breed["breed_group"])
+    @breeds.save
+    puts "it saved to the database"
+    end
