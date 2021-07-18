@@ -1,10 +1,10 @@
 class Dog < ApplicationRecord
     belongs_to :user
-    belongs_to :breed
+    belongs_to :breed, optional: true
     belongs_to :veterinarian, optional: true
     validates :name, presence: true
     validates :dog_breed, presence: true
-    validates :life_span, presence: true
+    validates :age, presence: true
     validates :symptoms, presence: true
     validates :description, presence: true
     validates :temperament, presence: true

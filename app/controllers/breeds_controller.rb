@@ -18,6 +18,6 @@ class BreedsController < ApplicationController
         end
 
         def breed_params
-            params.require(:breed).permit(:name, :breed_for, :life_span, :temperament, :description,:origin, :image) 
+            params.require(:breed).permit(:name, :breed_for, :life_span, :temperament, :description, :origin, :image) 
          end
 end

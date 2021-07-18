@@ -36,11 +36,10 @@ ActiveRecord::Schema.define(version: 2021_07_16_185709) do
   create_table "dogs", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.string "life_span"
+    t.string "age"
     t.string "temperament"
     t.string "description"
     t.string "origin"
-    t.string "image"
     t.string "phone_number"
     t.string "owners_name"
     t.string "symptoms"
