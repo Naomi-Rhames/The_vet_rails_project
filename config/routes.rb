@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :appointments do
-    resources :veterinarians, only: [:index, :show]
-  end
+  
+  resources :appointments
+  
   resources :breeds, only: [:index, :show]
-  resources :dogs
+  resources :dogs do 
+    resources :appointments
+  end
+
   resources :veterinarians, only: [:index, :show]
   get "/signup", to: "users#new", as: "signup"
  
@@ -16,6 +21,6 @@ Rails.application.routes.draw do
 
   get '/search' => "breeds#search", :as => 'search_breed'
 
-  get "/auth/google_oauth2/callback", to: "sessions#google_omniauth"
+  get "/auth/google_oauth2/callback", to: "sessions#google_omniauth" 
 
 end

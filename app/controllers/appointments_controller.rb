@@ -6,9 +6,11 @@ class AppointmentsController < ApplicationController
     end
 
     def create
+      
       @appointment = Appointment.create(appointment_params)
+      @dog = @appointment.dog
       if @appointment.save
-        redirect_to appointment_path(@appointment)
+        redirect_to dog_appointments_path(@dog)
       else
         render :new
       end
@@ -16,6 +18,7 @@ class AppointmentsController < ApplicationController
 
     def index
         @appointments = Appointment.all
+        # binding.pry
     end
 
     def show
@@ -26,7 +29,7 @@ class AppointmentsController < ApplicationController
 
     def update
       if @appointment.dog.user_id == current_user.id && @appointment.update(appointment_params)
-        redirect_to  appointments_path
+        redirect_to  dog_appointment_path(@appointment)
       else
         
         render :edit
@@ -37,7 +40,7 @@ class AppointmentsController < ApplicationController
     def destroy
         @appointment.destroy
         flash[:notice] = "Your Appointment was canceled please reshedule soon🐾😁!"
-        redirect_to appointments_path(@appointment)
+        redirect_to dog_appointments_path(@appointment)
     end
 
 private

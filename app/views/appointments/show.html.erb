@@ -10,9 +10,9 @@
 <br>
 <br>
   <% if @appointment.dog.user_id == current_user.id%>  
-<%= link_to "Edit Appointment", edit_appointment_path(@appointment)%>
+<%= link_to "Edit Appointment", edit_dog_appointment_path(@appointment)%>
 <br>
 <br>
-<%= link_to "Delete Appointment", appointment_path(@appointment), method: "delete"%>
+<%= link_to "Delete Appointment", dog_appointment_path(@appointment), method: "delete"%>
 <hr>
 <% end %>

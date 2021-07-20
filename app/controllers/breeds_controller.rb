@@ -4,9 +4,12 @@ class BreedsController < ApplicationController
 
     def index
         @breeds = Breed.all
+        if params[:q].present? #if the user subbmitted a search
+            @breeds = @breeds.search(params[:q].downcase) #search through the collection we already have
+        end
     end
-
-
+    
+    
 
     def show 
     end
@@ -18,6 +21,6 @@ class BreedsController < ApplicationController
         end
 
         def breed_params
-            params.require(:breed).permit(:name, :breed_for, :life_span, :temperament, :description, :origin, :image) 
+            params.require(:breed).permit(:name, :breed_for, :life_span, :temperament, :description, :origin, :image, :search) 
          end
 end
