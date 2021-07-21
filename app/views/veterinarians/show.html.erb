@@ -1,10 +1,13 @@
 <i><h2>You are viewing Dr. <%= @veterinarian.name %>'s File 🐾 </h2></i>
 <hr>
+
+
 <i><p> Feel free to contact your veterinarian! Please contact your veterinarian within our office hours from 7:00am - 6:00pm!</p><i>
 <br>
 <i><h3> The Veterinarians Contact Information</h3><i>
 <hr>
 <i><h4>Email Address: <%= @veterinarian.email%></h4></i>
 <i><h4>Office Number: <%= @veterinarian.phone_number%></h4></i>
+<i><h4> Fun fact about Dr. <%= @veterinarian.name %>: "I love dogs and furry animals! That is why I like my job..." </h4></i>
 
 <%= link_to "Schedule Your Dogs Appointment", new_appointment_path%>
