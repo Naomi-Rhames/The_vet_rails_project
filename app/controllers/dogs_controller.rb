@@ -8,7 +8,7 @@ class DogsController < ApplicationController
     def create
         @dog = Dog.create(dog_params)
         @dog.user_id = current_user.id
-        if @dog.save
+        if @dog.save 
             redirect_to dogs_path
            
         else
@@ -16,9 +16,9 @@ class DogsController < ApplicationController
     
         end
     end
-
+    
     def index
-        @dogs = Dog.all
+      @dogs = Dog.all
     end
 
     def show
