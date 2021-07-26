@@ -2,7 +2,7 @@ class AppointmentsController < ApplicationController
   before_action :find_appointment, only: [:index, :show, :edit, :update, :destroy]
  
     def new
-        @appointment = Appointment.new
+        @appointment = Appointment.new(dog_id: params[:id])
     end
 
     def create
@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
 
     def update
       if @appointment.dog.user_id == current_user.id && @appointment.update(appointment_params)
-        redirect_to  appointment_path(@dog, @appointment)
+        redirect_to  appointment_path(@appointment)
       else
         
         render :edit
@@ -40,7 +40,7 @@ class AppointmentsController < ApplicationController
     def destroy
         @appointment.destroy
         flash[:notice] = "Your Appointment was canceled please reshedule soon🐾😁!"
-        redirect_to dog_appointments_path(@dog)
+        redirect_to dog_appointments_path(@appointment)
     end
 
 
@@ -51,7 +51,7 @@ private
     end
 
     def find_appointment
-      @dog = Dog.find_by(id: params[:dog_id])
+       @dog = Dog.find_by_id(params[:dog_id])
       @appointment = Appointment.find_by_id(params[:id])
     end
 
