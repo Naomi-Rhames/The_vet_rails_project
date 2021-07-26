@@ -5,7 +5,6 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
       t.string :agenda
       t.datetime :date
       t.integer :veterinarian_id
-      t.integer :dog_id
       t.timestamps
     end
   end
