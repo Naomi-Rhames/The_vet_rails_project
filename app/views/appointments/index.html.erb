@@ -2,12 +2,11 @@
 <hr>
 <i><p>Here you can see your and other booked appointments!</i></p>
 <br>
-<%= link_to "Book An Appointment", new_appointment_path %>
+<%= link_to "Book An Appointment", new_dog_appointment_path(@dog) %>
 <br>
 <ul>
- <% @appointment.each do |dog, appointment|%>
- 
- <li><h3><%= link_to appointment.dog.name, dog_appointment_path(dog, appointment) %>
+ <% @appointments.each do | appointment|%>
+ <li><h3><%= link_to appointment.dog.name, appointment_path(appointment) %>
  <% end %>
 
  </ul>
