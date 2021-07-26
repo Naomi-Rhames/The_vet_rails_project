@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
-  before_action :find_appointment, only: [:index, :show, :edit, :update, :destroy]
+  before_action :find_appointment, only: [ :show, :edit, :update, :destroy]
+  before_action :find_dog
  
     def new
         @appointment = Appointment.new
@@ -12,20 +13,16 @@ class AppointmentsController < ApplicationController
         redirect_to dog_appointment_path(@dog, @appointment)
       else
         render :new
+      
       end
     end
 
-    def dog
-      @dog = Dog.all
-    end
-
     def index
-        @appointment = Appointment.all 
-
+        @appointments = Appointment.all
     end
 
     def show
-    
+       
     end
 
     def edit
@@ -51,10 +48,15 @@ class AppointmentsController < ApplicationController
 private
 
     def appointment_params
-      params.require(:appointment).permit(:dog_id, :symptoms, :agenda, :date,  :veterinarian_id)
+      params.require(:appointment).permit(:dog_id, :symptoms, :agenda, :date, :veterinarian_id)
     end
 
     def find_appointment
-      @appointment = Appointment.find_by_id(params[:id])
+      @appointment = Appointment.find(params[:id])
     end
+
+    def find_dog
+      @dog = Dog.find_by(id: params[:dog_id])
+    end
+
 end
