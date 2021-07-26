@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.body{
+    font-style: italic;
+}
+
 .dog {
     flex-direction: row;
     background-color: whitesmoke;
