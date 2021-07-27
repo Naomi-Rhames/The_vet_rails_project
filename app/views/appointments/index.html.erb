@@ -5,9 +5,9 @@
 <%= link_to "Book An Appointment", new_appointment_path %>
 <br>
 <ul>
- <% @appointment.each do |dog, appointment|%>
+ <% @appointments.each do |appointment|%>
  
- <li><h3><%= link_to appointment.dog.name, dog_appointment_path(dog, appointment) %>
+ <li><h3><%= link_to appointment.dog.name, dog_appointment_path(appointment.id, appointment) %></h3>
  <% end %>
 
  </ul>

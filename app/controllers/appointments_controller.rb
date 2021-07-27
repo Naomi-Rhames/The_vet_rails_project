@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
       @appointment = Appointment.create(appointment_params)
       @dog = @appointment.dog
       if @appointment.save
-        redirect_to dog_appointment_path(@dog, @appointment)
+        redirect_to dog_appointments_path(@dog, @appointment)
       else
         render :new
       
