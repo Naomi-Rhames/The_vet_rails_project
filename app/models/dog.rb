@@ -13,5 +13,7 @@ class Dog < ApplicationRecord
     validates :owners_name, presence: true
     validates :phone_number, presence: true
     
+
+
     
 end   
