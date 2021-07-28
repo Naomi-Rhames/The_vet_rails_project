@@ -3,3 +3,4 @@ Welcome to the Dog Hosptial! Here you can register your dog and get sighned up f
 
 
 It's important to make your dog feel healthy and strong! And it's our duty to keep your dog in great care. We love to see your dog grow as much as you as a dog care taker! :D
+

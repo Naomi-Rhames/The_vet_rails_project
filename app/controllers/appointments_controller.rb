@@ -55,5 +55,4 @@ private
     def find_dog
       @dog = Dog.find_by(id: params[:dog_id])
     end
-
 end
