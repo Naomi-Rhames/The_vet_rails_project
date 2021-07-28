@@ -4,8 +4,8 @@ class BreedsController < ApplicationController
 
     def index
         @breeds = Breed.all
-        if params[:q].present? #if the user subbmitted a search
-            @breeds = @breeds.search(params[:q].downcase) #search through the collection we already have
+        if params[:q].present? 
+            @breeds = @breeds.search(params[:q].downcase) 
         end
     end
     

@@ -2,7 +2,6 @@ class DogsController < ApplicationController
     before_action :find_dog, only: [:show, :edit, :update, :destroy]
     def new
         @dog = Dog.new
-        # binding.pry
     end
 
     def create
@@ -22,11 +21,11 @@ class DogsController < ApplicationController
     end
 
     def show
-        # binding.pry
+       
     end
 
     def edit
-        #  binding.pry
+      
     end
 
     def update
