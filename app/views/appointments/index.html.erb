@@ -7,7 +7,6 @@
 <ul>
 
  <% @appointments.each do |appointment|%>
- 
  <li><h3><%= link_to appointment.dog.name, dog_appointment_path(appointment.id, appointment) %></h3>
  <% end %>
 

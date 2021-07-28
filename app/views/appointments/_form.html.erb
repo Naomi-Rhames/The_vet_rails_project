@@ -16,7 +16,6 @@
   <br>
   <%= f.label :veterinarian_id, "Choose Your Veterinarian"%><br>
   <br> 
-
   <%= f.collection_select(:veterinarian_id, Veterinarian.all, :id, :name)%><br>
   <br>
   <%= f.submit "Submit Appointment!"%>

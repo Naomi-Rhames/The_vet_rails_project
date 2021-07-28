@@ -9,7 +9,6 @@ class VeterinariansController < ApplicationController
 
     private
     def find_veterinarian
-     
         @veterinarian = Veterinarian.find_by_id(params[:id])
     end
 end

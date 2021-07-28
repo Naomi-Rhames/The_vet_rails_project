@@ -4,8 +4,6 @@
 <br>
 <i><h3>View other Pets Here! 🐾</h3></i>
 
-
-
 <ul>
 <% @dogs.each do |dog| %>
 <li><h3><%= link_to dog.name, dog_path(dog) %></h3></li><br>
