@@ -12,5 +12,4 @@ class Dog < ApplicationRecord
     validates :origin, presence: true
     validates :owners_name, presence: true
     validates :phone_number, presence: true
-    
 end   
