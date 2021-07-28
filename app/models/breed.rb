@@ -4,5 +4,5 @@ class Breed < ApplicationRecord
      def self.search(params)
         Breed.where("LOWER(name) LIKE  ?", "%#{params}%")
       end
-
+    
 end 
