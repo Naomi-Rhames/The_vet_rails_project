@@ -8,5 +8,7 @@ class Appointment < ApplicationRecord
     validates :dog_id, presence: true
     
     #OPTIMIZE: create scope method per logged in user
+  
+
     
 end

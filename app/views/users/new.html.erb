@@ -1,10 +1,11 @@
-<i><h2>Signup Page</h2><i>
+<i><h2>Hospital For Dogs🐾</h2><i>
 <hr>
+<i><h3> Signup Here</i><h3>
 <br><%= form_for @user do |f| %>
   <%= render partial: "layouts/doggy_errors", locals: {dog: @user} %>
 <i><%= f.label :email %></i>
 <%= f.text_field :email %>
 <%= f.label :password %>
-<%= f.text_field :password %>
+<%= f.password_field :password %>
 <i><%= f.submit "Sign Up!" %></i>
 <% end %>
