@@ -8,8 +8,6 @@ class BreedsController < ApplicationController
             @breeds = @breeds.search(params[:q].downcase) 
         end
     end
-    
-    
 
     def show 
     end

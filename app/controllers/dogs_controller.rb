@@ -9,10 +9,8 @@ class DogsController < ApplicationController
         @dog.user_id = current_user.id
         if @dog.save 
             redirect_to dogs_path
-           
         else
             render :new
-    
         end
     end
     
@@ -20,12 +18,10 @@ class DogsController < ApplicationController
       @dogs = Dog.all
     end
 
-    def show
-       
+    def show 
     end
 
     def edit
-      
     end
 
     def update

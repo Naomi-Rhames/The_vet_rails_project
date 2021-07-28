@@ -5,7 +5,6 @@ class VeterinariansController < ApplicationController
     end
 
     def show
-
     end
 
     private

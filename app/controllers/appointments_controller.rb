@@ -13,7 +13,6 @@ class AppointmentsController < ApplicationController
         redirect_to dog_appointments_path(@dog, @appointment)
       else
         render :new
-      
       end
     end
 
@@ -22,7 +21,6 @@ class AppointmentsController < ApplicationController
     end
 
     def show
-       
     end
 
     def edit
@@ -32,7 +30,6 @@ class AppointmentsController < ApplicationController
       if @appointment.dog.user_id == current_user.id && @appointment.update(appointment_params)
         redirect_to  dog_appointment_path(@appointment)
       else
-        
         render :edit
       end
     end
