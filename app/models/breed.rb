@@ -5,7 +5,4 @@ class Breed < ApplicationRecord
         Breed.where("LOWER(name) LIKE  ?", "%#{params}%")
       end
 
-
-
-     
 end 
