@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :dogs do 
-    resources :appointments
+    resources :appointments, only:[:index,:show, :new], shallow: true
   end
   resources :appointments
   resources :breeds, only: [:index, :show]
