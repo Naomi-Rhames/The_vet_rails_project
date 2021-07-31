@@ -5,9 +5,15 @@
 <%= link_to "Book An Appointment", new_dog_appointment_path(current_user) %>
 <br>
 <ul>
-
- <% @appointments.each do |appointment|%>
- <li><h3><%= link_to appointment.dog.name, dog_appointment_path(appointment.id, appointment) %></h3>
- <% end %>
-
+    
+<% if @appointments.length > 0  %>
+    <ul>
+        <% @appointments.each do |appointment|%>
+        <li><h3><%= link_to appointment.dog.name, appointment_path(appointment) %></h3>
+        <% end %>
+    </ul>
+ <% else %>
+    <br>
+    <i><p>🐾You have no appointments🐾</p><i>
+<%end%>
  </ul>
