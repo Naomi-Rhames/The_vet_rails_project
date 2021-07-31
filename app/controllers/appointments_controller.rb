@@ -3,7 +3,6 @@ class AppointmentsController < ApplicationController
   before_action :find_dog
  
     def new
-      # byebug
        @appointment = Appointment.new(dog_id: current_user.id)
     end
 
