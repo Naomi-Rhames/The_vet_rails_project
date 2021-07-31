@@ -3,24 +3,28 @@ class AppointmentsController < ApplicationController
   before_action :find_dog
  
     def new
-        @appointment = Appointment.new
+      # byebug
+       @appointment = Appointment.new(dog_id: current_user.id)
     end
 
     def create
       @appointment = Appointment.create(appointment_params)
       @dog = @appointment.dog
-      if @appointment.save
-        redirect_to dog_appointments_path(@dog, @appointment)
+      if @appointment.valid?
+         @appointment.save
+        redirect_to dog_appointments_path(@appointment)
       else
         render :new
       end
     end
 
     def index
-        @appointments = Appointment.all
+         @appointments = Appointment.all
+      
     end
 
     def show
+  
     end
 
     def edit
@@ -28,9 +32,10 @@ class AppointmentsController < ApplicationController
 
     def update
       if @appointment.dog.user_id == current_user.id && @appointment.update(appointment_params)
-        redirect_to  dog_appointment_path(@appointment)
+        redirect_to  dog_appointments_path(@appointment)
       else
-        render :edit
+        flash[:notice] = "This appointment can't be edited 🐾"
+        redirect_to dog_appointments_path(@appointment) #CHeck route
       end
     end
 
@@ -48,9 +53,9 @@ private
       params.require(:appointment).permit(:dog_id, :symptoms, :agenda, :date, :veterinarian_id)
     end
 
-    def find_appointment
-      @appointment = Appointment.find(params[:id])
-    end
+  def find_appointment
+    @appointment = Appointment.find(params[:id]) 
+  end
 
     def find_dog
       @dog = Dog.find_by(id: params[:dog_id])
