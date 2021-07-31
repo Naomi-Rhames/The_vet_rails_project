@@ -4,5 +4,5 @@
 <i><p> We want to make sure that you can bring your dog when you are avalible so your furry friend can be healthy and strong!</p></i>
 <%= render 'form', appointment: @appointment %>
 <% else %>
-<h2> you can't edit this cute dog sorry!!!!!</h2>
+<%= render 'hacker', appointment: @appointment%>
 <%end%>
