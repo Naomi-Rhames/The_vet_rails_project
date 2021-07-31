@@ -28,6 +28,7 @@ class DogsController < ApplicationController
         if  @dog.user == current_user && @dog.update(dog_params)
             redirect_to dog_path
         else
+            flash[:notice] = "#{@dog.name} can't be edited 🐾"
             render :edit
         end
     end
