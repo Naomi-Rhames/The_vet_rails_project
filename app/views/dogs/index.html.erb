@@ -4,8 +4,14 @@
 <br>
 <i><h3><u>View other Pets Here!</u> 🐾</h3></i>
 
+
+<% if @dogs.length > 0 %>
 <ul>
 <% @dogs.each do |dog| %>
 <li><h3><%= link_to dog.name, dog_path(dog) %></h3></li><br>
 <% end%>
-</ul>
+ </ul>
+ <% else %>
+    <br>
+    <i><p>🐾You have no appointments🐾</p><i>
+<%end%>
