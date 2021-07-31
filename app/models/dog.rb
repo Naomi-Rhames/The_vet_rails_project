@@ -1,8 +1,8 @@
 class Dog < ApplicationRecord
     belongs_to :user
-    belongs_to :breed, optional: true
-    belongs_to :veterinarian, optional: true
+    # belongs_to :breed, optional: true
     has_many :appointments
+    has_many :veterinarians, through: :appointments 
     validates :name, presence: true
     validates :dog_breed, presence: true
     validates :age, presence: true
