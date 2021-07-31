@@ -1,6 +1,5 @@
 class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
-    has_many :dogs, through: :appointments
     has_many :dogs 
     has_secure_password
 
