@@ -1,5 +1,18 @@
+<% if @dog.user == current_user.id  %>
 <i><h2>You are Editing  <%= @dog.name %>'s Infomation!</h2></i> 
 <hr>
 <i><p> It's important to update your dog's info and your Contact information so everything can run smoothly!</p></i>
 
 <%= render 'form', dog: @dog %>
+<% else %>
+<h2> You can't edit this cute dog sorry 🐾</h2>
+<hr>
+<p>It's our policy and our duty to not to display important imformation such as Personal information, or any sensetive imformation! We want to keep all of our client's information safe and protected at all cost. Thank you for being very understanding!</p>
+<p> However check out some cool and awesome breeds in the link below: 🐾</p>
+ <br>
+ <%= link_to "Other Awesome Breeds Of Dogs!", breeds_path%>
+ <br>
+
+ <p>I hope you enjoy!<p>
+<br>
+<% end %>
