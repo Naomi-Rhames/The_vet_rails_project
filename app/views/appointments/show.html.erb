@@ -8,24 +8,17 @@
 <i><h4> Agenda: <%= @appointment.agenda%></h4></i>
 <i><h4> Date: <%= @appointment.date %></h4><i>
 <i><h4> Veterinarian: <%= @appointment.veterinarian.name %></h4><i>
-<% else %>
-
-<h2> Sorry, You can not see this cute Dog's Appointment 🐾</h2>
-<hr>
-<p>It's our policy and our duty to not to display important imformation such as Personal information, or any sensetive imformation! We want to keep all of our client's information safe and protected at all cost. Thank you for being very understanding!</p>
-<p> However check out some cool and awesome breeds in the link below: 🐾</p>
- <br>
- <%= link_to "Other Awesome Breeds Of Dogs!", breeds_path%>
- <br>
-
- <p>I hope you enjoy!<p>
 <br>
-<% end %>
-<br>
-  <% if @appointment.dog.user_id == current_user.id%>  
 <%= link_to "Edit Appointment", edit_appointment_path(@appointment)%>
 <br>
 <br>
 <%= link_to "Delete Appointment", appointment_path(@appointment), method: "delete"%>
 <hr>
+
+<% else %>
+
+<%= render 'hacker', appointment: @appointment %>
+<br>
 <% end %>
+<br>
+  
