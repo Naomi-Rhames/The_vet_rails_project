@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
    
+   
     def new
         @user = User.new
     end 
@@ -15,9 +16,24 @@ class UsersController < ApplicationController
         end
    end
 
+    def index
+    #   byebug
+      @user = current_user.dogs.all
+#          if params[:dog_id]
+#             @dogs = Dog.all
+#              @users = find_user
+#         else
+#             @users = User.all
+        end
+#     end
+
+#    def show
+
+#    end
    private
 
    def user_params
     params.require(:user).permit(:email, :password)
    end 
+
 end
