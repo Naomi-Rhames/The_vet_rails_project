@@ -18,8 +18,10 @@ class AppointmentsController < ApplicationController
     end
 
     def index
-         @appointments = Appointment.all
-      
+          # byebug
+         @appointments =  Appointment.all
+        #  current_user.dogs.find_by_id(params[:id]).appointments.where("appointments.dog_id")
+        #  current_user.dogs.appointments.where("appointments.dog_id")
     end
 
     def show
