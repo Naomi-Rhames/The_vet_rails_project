@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   resources :appointments
   resources :breeds, only: [:index, :show]
-
+  resources :users 
   resources :veterinarians, only: [:index, :show]
   get "/signup", to: "users#new", as: "signup"
  
