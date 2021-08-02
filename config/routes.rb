@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :breeds, only: [:index, :show]
   resources :veterinarians, only: [:index, :show]
   get "/signup", to: "users#new", as: "signup"
- 
+  get "/profile",  to: "users#index", as: "profile"
   resources :users, only: [:new, :create, :index]
 
   get "/login", to: "sessions#new", as: "login"
