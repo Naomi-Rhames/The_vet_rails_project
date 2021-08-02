@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   end
   resources :appointments
   resources :breeds, only: [:index, :show]
-  resources :users 
   resources :veterinarians, only: [:index, :show]
   get "/signup", to: "users#new", as: "signup"
  
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :index]
 
   get "/login", to: "sessions#new", as: "login"
     resources :sessions, only: [:create]
