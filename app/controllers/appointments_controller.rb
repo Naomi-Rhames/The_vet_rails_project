@@ -18,14 +18,13 @@ class AppointmentsController < ApplicationController
     end
 
     def index
-          # byebug
+         
          @appointments =  Appointment.all
-        #  current_user.dogs.find_by_id(params[:id]).appointments.where("appointments.dog_id")
-        #  current_user.dogs.appointments.where("appointments.dog_id")
+        #  byebug
     end
 
     def show
-  
+   
     end
 
     def edit
@@ -48,15 +47,15 @@ class AppointmentsController < ApplicationController
     end
 
 
-private
+  private
 
     def appointment_params
       params.require(:appointment).permit(:dog_id, :symptoms, :agenda, :date, :veterinarian_id)
     end
 
-  def find_appointment
-    @appointment = Appointment.find(params[:id]) 
-  end
+    def find_appointment
+     @appointment = Appointment.find(params[:id]) 
+    end
 
     def find_dog
       @dog = Dog.find_by(id: params[:dog_id])
