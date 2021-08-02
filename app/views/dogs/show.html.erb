@@ -29,10 +29,13 @@
 <i><p> Date Of your Appointment: <%= @dog.appointments.collect(&:date)%></p>
 <i><p> Symptoms: <%= @dog.appointments.collect(&:symptoms)%>
 <i><p> Agenda: <%= @dog.appointments.collect(&:agenda)%></p>
+<i><p> You have an appointment with <%= @dog.veterinarians.collect(&:name) %></i></p>
 <% else %>
 <hr>
 <i><h4><u>Your Dog's Upcoming Appointment </u>🐾</i><h4>
 
 <i><p>You have no Upcoming Appointments 🐾</p></i>
 <% end %>
+<br>
+<hr>
 
