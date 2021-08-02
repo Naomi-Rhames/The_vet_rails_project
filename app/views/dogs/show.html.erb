@@ -8,15 +8,31 @@
 <i><h4> Description: <%= @dog.description %></h4><i>
 <i><h4> Temperament: <%= @dog.temperament %></h4></i>
 <br>
-<i><h3>Owners Contact Information</h3><i>
-<hr>
+<i><h3><u>Owners Contact Information </u> 🐾  </h3><i>
+
 <i><h4>Owners Name: <%= @dog.owners_name%></h4></i>
 <i><h4>Owners Email: <%= @dog.user.email%>
 <br>
 <br>
     <% if @dog.user == current_user %>
+
 <%= link_to "Edit Dog's Information", edit_dog_path(@dog)%>
 <br>
 <br>
 <%= link_to "Delete Dog's Information", dog_path(@dog), method: "delete"%>
+<br>
 <% end %>
+
+ <% if @dog.user == current_user && @dog.appointments.length > 0  %>
+
+ <i><h4><u>Your Dog's Upcoming Appointment</u> 🐾 </u></i><h4>
+<i><p> Date Of your Appointment: <%= @dog.appointments.collect(&:date)%></p>
+<i><p> Symptoms: <%= @dog.appointments.collect(&:symptoms)%>
+<i><p> Agenda: <%= @dog.appointments.collect(&:agenda)%></p>
+<% else %>
+<hr>
+<i><h4><u>Your Dog's Upcoming Appointment </u>🐾</i><h4>
+
+<i><p>You have no Upcoming Appointments 🐾</p></i>
+<% end %>
+
