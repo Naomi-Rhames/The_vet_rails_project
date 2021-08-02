@@ -11,10 +11,10 @@
 
 <i><h3><u>View your Pets Here!</u> 🐾</h3></i>
 <% if @user.length > 0 %>
- <i><p>Your Dogs Name: <%=names = @user.collect(&:name) %></p></i>
+ <i><p>Your Dog's Name: <%=names = @user.collect(&:name) %></p></i>
  <i><p>Dog's Age: <%=age = @user.collect(&:age) %><br></p></i>
- <i><p>Your Dogs Temperament: <%=temperament = @user.collect(&:temperament) %></p></i>
- <i><p> Dog Breed: <%= dog_breed = @user.collect(&:dog_breed) %></p></i>
+ <i><p>Your Dog's Temperament: <%=temperament = @user.collect(&:temperament) %></p></i>
+ <i><p> Dog's Breed: <%= dog_breed = @user.collect(&:dog_breed) %></p></i>
  <i><p> Description: <%= description = @user.collect(&:description) %></p></i>
  <i><p> Temperament: <%= temperament = @user.collect(&:temperament) %></p></i>
  <% else %>
