@@ -17,7 +17,8 @@ class UsersController < ApplicationController
    end
 
     def index
-    #   byebug
+
+    #    byebug
       @user = current_user.dogs.all
 #          if params[:dog_id]
 #             @dogs = Dog.all
@@ -27,9 +28,9 @@ class UsersController < ApplicationController
         end
 #     end
 
-#    def show
-
-#    end
+   def show
+    
+   end
    private
 
    def user_params
