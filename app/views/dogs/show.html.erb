@@ -24,9 +24,11 @@
 <br>
 <br>
 <i><h4><u>Your Dog's Upcoming Appointment</u> 🐾 </u></i><h4>
-<i><p> Date Of your Appointment: <%= @dog.appointments.collect(&:date)%></p>
-<i><p> Symptoms: <%= @dog.appointments.collect(&:symptoms)%>
-<i><p> Agenda: <%= @dog.appointments.collect(&:agenda)%></p>
-<i><p> You have an appointment with <%= @dog.veterinarians.collect(&:name) %></i></p>
-
+    <% if @dog.appointments.length > 0 %>
+    <% @dog.appointments.each do |appointment| %>
+       <h3><%= link_to appointment.dog.name, appointment_path(appointment) %></h3>
+    <% end %>
+    <% else %>
+    <i><p> You have no appointments🐾</p></i>
+    <%end%>
 <% end %>
