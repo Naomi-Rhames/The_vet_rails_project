@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: [:new, :create]
    
-   
     def new
         @user = User.new
     end 
@@ -11,7 +10,7 @@ class UsersController < ApplicationController
      if @user.save
          session[:user_id] = @user.id 
          redirect_to dogs_path
-    else
+     else
         render :new
         end
    end
@@ -20,10 +19,6 @@ class UsersController < ApplicationController
       @dogs = current_user.dogs
      end
 
-
-   def show
-    
-   end
    private
 
    def user_params

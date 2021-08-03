@@ -19,7 +19,6 @@ class DogsController < ApplicationController
     end
 
     def show 
-     
     end
 
     def edit

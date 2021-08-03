@@ -18,9 +18,7 @@ class AppointmentsController < ApplicationController
     end
 
     def index
-         
          @appointments =  Appointment.all
-        #  byebug
     end
 
     def show
