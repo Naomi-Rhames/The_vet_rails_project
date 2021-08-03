@@ -17,16 +17,9 @@ class UsersController < ApplicationController
    end
 
     def index
+      @dogs = current_user.dogs
+     end
 
-    #    byebug
-      @user = current_user.dogs.all
-#          if params[:dog_id]
-#             @dogs = Dog.all
-#              @users = find_user
-#         else
-#             @users = User.all
-        end
-#     end
 
    def show
     
