@@ -3,27 +3,19 @@
 <i><p>We are so happy that you are here and our app is to help you keep your dog healthy and in great shape! 🐾</p></i>
 <br>
  <i><h3><u>View Contact Info!</u> 🐾</h3></i>
- <i><p>Your  Name: <%=names = @user.collect(&:owners_name) %></p></i>
  <i><p>Your Email: <%=current_user.email %></p></i>
- <i><p>Your Phone Number: <%=names = @user.collect(&:phone_number) %></p></i>
 
 <br>
 
 <i><h3><u>View your Pets Here!</u> 🐾</h3></i>
-<% if @user.length > 0 %>
- <i><p>Dog's Name: <%=names = @user.collect(&:name) %></p></i>
- <i><p>Dog's Age: <%=age = @user.collect(&:age) %><br></p></i>
- <i><p>Dog's Temperament: <%=temperament = @user.collect(&:temperament) %></p></i>
- <i><p>Dog's Breed: <%= dog_breed = @user.collect(&:dog_breed) %></p></i>
- <i><p>Dog's Description: <%= description = @user.collect(&:description) %></p></i>
- <i><p>Dog's Temperament: <%= temperament = @user.collect(&:temperament) %></p></i>
- <% else %>
- <br>
- <i><p> No dog's are registered yet ! 🐾 </p></i>
- <% end %>
- <hr>
-<br>
-<br>
+<% if @dogs.length > 0 %>
+<% @dogs.each do |dog| %>
+<i><p>Dog's Name: <%= link_to dog.name, dog_path(dog) %></i></p>
+<% end %>
+<%else%>
+<i><p> You hvae no registered dog's yet 🐾 </i></p>
+
+<% end %>
 
 
 
