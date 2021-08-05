@@ -1,19 +1,19 @@
 <i><h2>Booked Appointments Here🐾</h2></i>
 <hr>
-<i><p>Here you can see your and other booked appointments!</i></p>
-<br>
-<%= link_to "Book An Appointment", new_dog_appointment_path(current_user) %>
-<br>
+<i><p>Here you can see your  booked appointments!</i></p>
 <ul>
     
 <% if @appointments.length > 0  %>
     <ul>
-        <% @appointments.each do |appointment|%>
-        <li><h3><%= link_to appointment.dog.name, appointment_path(appointment) %></h3>
+    <% @appointments.each do |appointment|%>
+   
+    <% if appointment.dog.user == current_user %>
+    <li><h3><%= link_to appointment.dog.name, appointment_path(appointment) %></h3>
+     <% end %>
         <% end %>
     </ul>
  <% else %>
     <br>
     <i><p>🐾There's no appointments🐾</p><i>
 <%end%>
- </ul>
+ </ul> 
