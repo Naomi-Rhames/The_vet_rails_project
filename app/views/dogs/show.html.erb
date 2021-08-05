@@ -24,6 +24,9 @@
 <br>
 <br>
 <i><h4><u>Your Dog's Upcoming Appointment</u> 🐾 </u></i><h4>
+<br>
+<%= link_to "Book An Appointment", new_dog_appointment_path(@dog) %>
+<br>
     <% if @dog.appointments.length > 0 %>
     <% @dog.appointments.each do |appointment| %>
        <h3><%= link_to appointment.dog.name, appointment_path(appointment) %></h3>
