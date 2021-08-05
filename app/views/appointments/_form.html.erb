@@ -1,10 +1,9 @@
 <%= form_for @appointment do |f|%>
 
   <%= render partial: "layouts/appointment_errors", locals: {appointment: @appointment} %>
-  <%= f.label :dog_id, "Dog Name" %><br>
   <br>
-  <%= f.collection_select(:dog_id, Dog.all, :id, :name, prompt: true )%><br>
-  <br>
+  <%= f.hidden_field( :dog_id, value: params[:dog_id]) %>
+
   <%= f.label :symptoms %><br>
   <%= f.text_field :symptoms %><br>
   <br>
