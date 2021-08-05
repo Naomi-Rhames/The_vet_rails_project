@@ -30,9 +30,8 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-
       if @appointment.dog.user_id == current_user.id && @appointment.update(appointment_params)
-        redirect_to  dog_appointments_path(@dog)
+        redirect_to  dog_appointments_path(@appointment.dog)
       else
         flash[:notice] = "This appointment can't be edited 🐾"
         redirect_to dog_appointments_path(@appointment) #CHeck route
