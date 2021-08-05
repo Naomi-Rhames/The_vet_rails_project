@@ -7,11 +7,12 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-      @appointment = Appointment.create(appointment_params)
-      @dog = @appointment.dog
+      # byebug
+      @appointment = Appointment.new(appointment_params)
       if @appointment.valid?
          @appointment.save
         redirect_to dog_appointments_path(@appointment)
+
       else
         render :new
       end
@@ -29,8 +30,9 @@ class AppointmentsController < ApplicationController
     end
 
     def update
+
       if @appointment.dog.user_id == current_user.id && @appointment.update(appointment_params)
-        redirect_to  dog_appointments_path(@appointment)
+        redirect_to  dog_appointments_path(@dog)
       else
         flash[:notice] = "This appointment can't be edited 🐾"
         redirect_to dog_appointments_path(@appointment) #CHeck route
