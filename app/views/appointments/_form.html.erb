@@ -2,8 +2,9 @@
 
   <%= render partial: "layouts/appointment_errors", locals: {appointment: @appointment} %>
   <br>
+  <% if params[:dog_id]  %>
   <%= f.hidden_field( :dog_id, value: params[:dog_id]) %>
-
+<% end %>
   <%= f.label :symptoms %><br>
   <%= f.text_field :symptoms %><br>
   <br>
