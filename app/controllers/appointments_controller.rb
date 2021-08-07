@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :find_dog
  
     def new
-       @appointment = Appointment.new(dog_id: current_user.id)
+       @appointment = Appointment.new(dog_id: @dog.id)
     end
 
     def create
