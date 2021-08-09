@@ -7,12 +7,10 @@ class AppointmentsController < ApplicationController
     end
 
     def create
-      # byebug
       @appointment = Appointment.new(appointment_params)
       if @appointment.valid?
          @appointment.save
-        redirect_to dog_appointments_path(@appointment)
-
+        redirect_to dog_appointments_path(@appointment) 
       else
         render :new
       end
