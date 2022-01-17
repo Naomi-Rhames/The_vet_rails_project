@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 2021_07_26_001421) do
 
   create_table "appointments", force: :cascade do |t|
-    t.string "symptoms"
-    t.string "agenda"
-    t.datetime "date"
-    t.integer "veterinarian_id"
+    t.string "date"
+    t.integer "doctors_id"
+    t.integer "dogs_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "dog_id"
@@ -35,13 +35,14 @@ ActiveRecord::Schema.define(version: 2021_07_26_001421) do
   end
 
   create_table "dogs", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "dog_id"
     t.string "name"
-    t.string "age"
+    t.string "life_span"
     t.string "temperament"
     t.string "description"
     t.string "origin"
-    t.string "phone_number"
+    t.string "image"
+    t.integer "phone_number"
     t.string "owners_name"
     t.string "symptoms"
     t.string "dog_breed"
@@ -58,8 +59,7 @@ ActiveRecord::Schema.define(version: 2021_07_26_001421) do
 
   create_table "veterinarians", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "phone_number"
+    t.string "specialty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
